@@ -11,7 +11,55 @@
 - توثيق API
 - إرسال بريد إلكتروني ترحيبي عند التسجيل
 
-## نقاط النهاية API
+### Todo API
+
+This project provides a RESTful API for managing Todo items.
+
+## API Endpoints
+
+### Get all Todos
+- **URL**: `/api/todos/`
+- **Method**: `GET`
+- **Description**: Retrieve a list of all todo items.
+
+### Create a Todo
+- **URL**: `/api/todos/`
+- **Method**: `POST`
+- **Request Body**: 
+  ```json
+  {
+      "title": "Todo Title",
+      "description": "Todo Description",
+      "completed": false
+  }
+  ```
+- **Description**: Create a new todo item.
+
+### Get a Todo by ID
+- **URL**: `/api/todos/<id>/`
+- **Method**: `GET`
+- **Description**: Retrieve a specific todo item by its ID.
+
+### Update a Todo
+- **URL**: `/api/todos/<id>/`
+- **Method**: `PUT`
+- **Request Body**: 
+  ```json
+  {
+      "title": "Updated Title",
+      "description": "Updated Description",
+      "completed": true
+  }
+  ```
+- **Description**: Update an existing todo item.
+
+### Delete a Todo
+- **URL**: `/api/todos/<id>/`
+- **Method**: `DELETE`
+- **Description**: Delete a specific todo item by its ID. Returns a success message if deleted successfully.
+
+## Response Format
+All responses will be in JSON format.
 
 ### المصادقة
 
