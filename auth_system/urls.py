@@ -16,9 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
+from todo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('users.urls')),
     path('api/todos/', include('todo.urls')),
+    path('', lambda request: redirect('task_list'), name='home'),
+    path('accounts/login/', views.login_view, name='login'),
+    path('accounts/register/', views.register, name='register'),
+    path('accounts/logout/', views.logout_view, name='logout'),
 ]
